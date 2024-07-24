@@ -6,12 +6,12 @@
             integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
             crossorigin="anonymous"
         ></script>
-        <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" href="/output.css" />
         <title>{% block title %}{{ title }} - My Site{% endblock %}</title>
         {% block head %}{% endblock %}
     </head>
-    <body>
-        <div id="content">
+    <body class="h-screen bg-gray-900 text-gray-200 flex flex-col items-center justify-center">
+        <div id="content" class="text-center space-y-8">
             {% block content %}
             <p>Placeholder content</p>
             {% endblock %}
