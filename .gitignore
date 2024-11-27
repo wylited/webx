@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+*.log
+tmp/
+node_modules/
+package-lock.json
+pnpm-lock.json
+api/target/
