@@ -1,17 +1,27 @@
 {
-  "name": "wylited.github.io",
+  "name": "webx",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "My personal web presence",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"npm run watch:css\" \"npm run watch:js\"",
+    "build": "npm run clean && npm run build:css && npm run build:js",
+    "clean": "rimraf public/dist",
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/dist/style.css --minify",
+    "build:js": "esbuild src/htmx.js --bundle --outfile=public/dist/htmx.min.js --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./public/dist/style.css --watch",
+    "watch:js": "esbuild src/htmx.js --bundle --outfile=public/dist/htmx.min.js --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "htmx.org": "^1.9.12"
+  },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
-    "htmx.org": "^1.9.12",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^8.2.0",
+    "esbuild": "^0.24.0",
+    "postcss": "^8.4.49",
+    "rimraf": "^5.0.0",
     "tailwindcss": "^3.4.15"
   }
 }

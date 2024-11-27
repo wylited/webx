@@ -4,8 +4,10 @@
 tmp/
 node_modules/
 package-lock.json
-pnpm-lock.json
+pnpm-lock.yaml
 api/target/
 .vercel
 target/
 Cargo.lock
+public/
+

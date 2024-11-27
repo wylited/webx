@@ -1,7 +1,13 @@
 {
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
   "functions": {
     "api/**/*.rs": {
-      "runtime": "vercel-rust@4.0.7"
+      "runtime": "vercel-rust@4.0.0"
     }
-  }
+  },
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/api/.*", "dest": "/api/$1" }
+  ]
 }
