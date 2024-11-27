@@ -1,5 +1,4 @@
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
-use serde_json::json;
 use std::sync::atomic::{AtomicU64, Ordering};
 use http::Method;
 
@@ -14,19 +13,17 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
     match req.method() {
         &Method::GET => {
             let count = COUNTER.load(Ordering::Relaxed);
-            let response = json!({ "count": count });
             Ok(Response::builder()
                 .status(StatusCode::OK)
-                .header("Content-Type", "application/json")
-                .body(Body::Text(response.to_string()))?)
+                .header("Content-Type", "text/plain")
+                .body(Body::Text(count.to_string()))?)
         }
         &Method::POST => {
             let new_count = COUNTER.fetch_add(1, Ordering::Relaxed) + 1;
-            let response = json!({ "count": new_count });
             Ok(Response::builder()
                 .status(StatusCode::OK)
-                .header("Content-Type", "application/json")
-                .body(Body::Text(response.to_string()))?)
+                .header("Content-Type", "text/plain")
+                .body(Body::Text(new_count.to_string()))?)
         }
         _ => Ok(Response::builder()
             .status(StatusCode::METHOD_NOT_ALLOWED)

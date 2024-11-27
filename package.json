@@ -4,13 +4,11 @@
   "description": "My personal web presence",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run watch:css\" \"npm run watch:js\"",
-    "build": "npm run clean && npm run build:css && npm run build:js",
-    "clean": "rimraf public/dist",
+    "build": "npm run clean && npm run build:css && npm run build:js && npm run build:html",
+    "clean": "rimraf public/dist public/css public/js",
     "build:css": "tailwindcss -i ./src/input.css -o ./public/dist/style.css --minify",
     "build:js": "esbuild src/htmx.js --bundle --outfile=public/dist/htmx.min.js --minify",
-    "watch:css": "tailwindcss -i ./src/input.css -o ./public/dist/style.css --watch",
-    "watch:js": "esbuild src/htmx.js --bundle --outfile=public/dist/htmx.min.js --watch"
+    "build:html": "cp index.html public/"
   },
   "dependencies": {
     "htmx.org": "^1.9.12"
