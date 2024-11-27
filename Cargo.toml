@@ -1,7 +1,8 @@
 [package]
-name = "vercel api"
+name = "webx_api"
 version = "0.1.0"
 edition = "2021"
+publish=false
 
 [dependencies]
 tokio = { version = "1", features = ["macros"] }
@@ -9,6 +10,7 @@ serde_json = { version = "1", features = ["raw_value"] }
 
 # Documentation: https://docs.rs/vercel_runtime/latest/vercel_runtime
 vercel_runtime = { version = "1" }
+http = "1.1.0"
 
 # You can specify a library for shared logic here (optional)
 # [lib]

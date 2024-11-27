@@ -1,7 +1,7 @@
-use http::Method;
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
 use serde_json::json;
 use std::sync::atomic::{AtomicU64, Ordering};
+use http::Method;
 
 static COUNTER: AtomicU64 = AtomicU64::new(0);
 
