@@ -11,68 +11,54 @@ module.exports = {
       lg: '976px',
       xl: '1440px',
     },
-    colors: {
-      'transparent': 'transparent',
-      'white': '#FCFCFC',
-      'black': '#5C6166',
-      'blue': '#4CBF99',
-      'purple': '#A37ACC',
-      'red': '#F07171',
-      'pink': '#F07171',
-      'orange': '#ED9366',
-      'green': '#13ce66',
-      'yellow': '#86B300',
-      'gray-dark': '#273444',
-      'gray': '#8A9199',
-      'gray-light': '#F8F9FA'
-    },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      sans: ['Lexend', 'sans-serif'],
+      mono: ['JetBrainsMono Nerd Font', 'monospace'],
     },
     extend: {
       colors: {
+        transparent: 'transparent',
         white: {
           DEFAULT: '#FCFCFC',
-          dark: '#BFBDB6' // editor.fg
+          dark: '#BFBDB6'
         },
         black: {
           DEFAULT: '#5C6166',
-          dark: '#0D1017' // editor.bg
+          dark: '#0D1017'
         },
         blue: {
           DEFAULT: '#4CBF99',
-          dark: '#39BAE6' // syntax.tag
+          dark: '#95E6CB'
         },
         purple: {
           DEFAULT: '#A37ACC',
-          dark: '#D2A6FF' // syntax.constant
+          dark: '#D2A6FF'
         },
         red: {
           DEFAULT: '#F07171',
-          dark: '#F26D78' // vcs.removed
+          dark: '#F26D78'
         },
         pink: {
           DEFAULT: '#F07171',
-          dark: '#F07178' // syntax.markup
+          dark: '#F07178'
         },
         orange: {
           DEFAULT: '#ED9366',
-          dark: '#FF8F40' // syntax.keyword
+          dark: '#FF8F40'
         },
         green: {
           DEFAULT: '#13ce66',
-          dark: '#7FD962' // vcs.added
+          dark: '#7FD962'
         },
         yellow: {
           DEFAULT: '#86B300',
-          dark: '#E6B450' // common.accent
+          dark: '#E6B450'
         },
         gray: {
           DEFAULT: '#8A9199',
-          dark: '#565B66', // ui.fg
+          dark: '#565B66',
           'dark-dark': '#273444',
-          'light-dark': '#ACB6BF' // syntax.comment base
+          'light-dark': '#ACB6BF'
         }
       },
       spacing: {

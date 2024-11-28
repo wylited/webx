@@ -3,15 +3,38 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --color-primary: #FFAA33;
-    --color-secondary: #55B4D4;
-    --color-tertiary: #FA8D3E;
+  p {
+    @apply text-black dark:text-white;
+  }
+  h1 {
+    @apply text-black dark:text-white;
+  }
+  h2 {
+    @apply text-black dark:text-white;
+  }
+}
+
+@layer components {
+  button {
+    @apply text-blue dark:text-blue-dark; /* Base styles for all buttons */
+    transition: color 0.3s; /* Smooth transition for hover effect */
   }
 
-  .dark {
-    --color-primary: #E6B450;
-    --color-secondary: #39BAE6;
-    --color-tertiary: #FF8F40;
+  button:hover {
+    @apply text-red dark:text-red-dark; /* Change text color on hover */
   }
+}
+
+@font-face {
+  font-family: "JetBrainsMono Nerd Font";
+  font-style: normal;
+  font-weight: 300;
+  src: url('https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/tags/v3.3.0/patched-fonts/JetBrainsMono/Ligatures/Light/JetBrainsMonoNerdFont-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.googleapis.com/css2?family=Lexend&display=swap').format('truetype');
 }

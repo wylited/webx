@@ -4,11 +4,12 @@
   "description": "My personal web presence",
   "private": true,
   "scripts": {
-    "build": "npm run clean && npm run build:css && npm run build:js && npm run build:html",
-    "clean": "rimraf public/dist public/css public/js",
+    "build": "npm run clean && npm run build:css && npm run build:js && npm run build:html && npm run build:audio",
+    "clean": "rimraf public/dist",
     "build:css": "tailwindcss -i ./src/input.css -o ./public/dist/style.css --minify",
     "build:js": "esbuild src/htmx.js --bundle --outfile=public/dist/htmx.min.js --minify",
-    "build:html": "cp index.html public/"
+    "build:html": "cp index.html public/",
+    "build:audio": "cp src/wheni226.mp3 public/dist/"
   },
   "dependencies": {
     "htmx.org": "^1.9.12"
