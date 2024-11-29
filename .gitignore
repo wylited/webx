@@ -10,4 +10,4 @@ api/target/
 target/
 Cargo.lock
 public/
-
+.cargo/
