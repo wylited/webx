@@ -48,8 +48,14 @@
 }
 
 @font-face {
-    font-family: 'JetBrains Mono Nerd';
-    src: url('/dist/JetBrainsMonoNerdFont-Light.woff2') format('woff2');
-    font-weight: 300; /* Adjust according to the font weight */
-    font-style: normal; /* Adjust if you have italic or other styles */
+    font-family: 'JetBrains Mono Nerd Font';
+    src: url('/dist/jetbrains.woff2') format('woff2');
+    font-stretch: normal;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: normal;
 }
