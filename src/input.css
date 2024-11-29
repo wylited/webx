@@ -46,24 +46,3 @@
     @apply text-orange dark:text-orange-dark;
   }
 }
-
-@font-face {
-  font-family: "JetBrainsMono Nerd Font";
-  font-style: normal;
-  font-weight: 300;
-  src: url('https://wylited.vercel.app/dist/JetBrainsMonoNerdFont-Light.woff2').format('woff2');
-}
-
-@font-face {
-  font-family: "Lexend";
-  font-style: normal;
-  font-weight: 400;
-  src: url('https://fonts.googleapis.com/css2?family=Lexend&display=swap').format('truetype');
-}
-
-@font-face {
-  font-family: "Lexend";
-  font-style: normal;
-  font-weight: 300;
-  src: url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap').format('truetype');
-}
