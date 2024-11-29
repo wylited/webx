@@ -51,7 +51,7 @@
   font-family: "JetBrainsMono Nerd Font";
   font-style: normal;
   font-weight: 300;
-  src: '/dist/JetBrainsMonoNerdFont-Light.ttf';
+  src: url('https://wylited.vercel.app/dist/JetBrainsMonoNerdFont-Light.woff2').format('woff2');
 }
 
 @font-face {
