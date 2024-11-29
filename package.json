@@ -8,7 +8,7 @@
     "clean": "rimraf public/dist",
     "build:css": "tailwindcss -i ./src/input.css -o ./public/dist/style.css --minify",
     "build:js": "esbuild src/htmx.js --bundle --outfile=public/dist/htmx.min.js --minify && cp src/scripts.js public/",
-    "build:html": "cp index.html public/ && cp src/*.html public/",
+    "build:html": "cp index.html public/",
     "build:audio": "cp src/wheni226.mp3 public/dist/"
   },
   "dependencies": {

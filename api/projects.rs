@@ -9,7 +9,7 @@ async fn main() -> Result<(), Error> {
 }
 
 pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
-    let paths = vec!["home".to_string(), "prose".to_string()];
+    let paths = vec!["home".to_string(), "projects".to_string()];
     let song = "When I 226";
 
     let content = maud! {

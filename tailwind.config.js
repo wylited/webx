@@ -2,6 +2,7 @@ module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,html,rs}",
+    "./api/**/*.rs"
   ],
   darkMode: 'selector',
   theme: {
