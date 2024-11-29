@@ -23,6 +23,15 @@
   button:hover {
     @apply text-red dark:text-red-dark; /* Change text color on hover */
   }
+  a {
+    @apply text-blue dark:text-blue-dark; /* Base styles for all buttons */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+
+  a:hover {
+    @apply text-red dark:text-red-dark; /* Change text color on hover */
+  }
+
 }
 
 @font-face {
