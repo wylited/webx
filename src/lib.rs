@@ -14,7 +14,7 @@ pub fn header(path_segments: &[String], current_song: &str) -> String {
         div class="flex justify-between items-center mb-1" {
             div class="content-center" {
                 h2 class="text-left text-purple font-mono dark:text-purple-dark" {
-                    "$ pwd > "
+                    "$"
                     @for segment in path_segments {
                         button
                             class="nav"

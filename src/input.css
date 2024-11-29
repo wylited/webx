@@ -51,7 +51,7 @@
   font-family: "JetBrainsMono Nerd Font";
   font-style: normal;
   font-weight: 300;
-  src: url('https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/tags/v3.3.0/patched-fonts/JetBrainsMono/Ligatures/Light/JetBrainsMonoNerdFont-Light.ttf') format('truetype');
+  src: '/dist/JetBrainsMonoNerdFont-Light.ttf';
 }
 
 @font-face {
