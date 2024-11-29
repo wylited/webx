@@ -38,12 +38,12 @@
   }
 
   .nav {
-    @apply text-orange dark:text-orange underline;
+    @apply text-green dark:text-green-dark underline;
     transition: color 0.3s;
   }
 
   .nav:hover {
-    @apply text-purple dark:text-purple-dark;
+    @apply text-orange dark:text-orange-dark;
   }
 }
 

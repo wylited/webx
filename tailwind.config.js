@@ -1,7 +1,7 @@
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,html}",
+    "./src/**/*.{js,html,rs}",
   ],
   darkMode: 'selector',
   theme: {
