@@ -23,6 +23,7 @@
   button:hover {
     @apply text-red dark:text-red-dark; /* Change text color on hover */
   }
+
   a {
     @apply text-blue dark:text-blue-dark; /* Base styles for all buttons */
     transition: color 0.3s; /* Smooth transition for hover effect */
@@ -32,6 +33,14 @@
     @apply text-red dark:text-red-dark; /* Change text color on hover */
   }
 
+  .nav {
+    @apply text-orange dark:text-orange underline;
+    transition: color 0.3s;
+  }
+
+  .nav:hover {
+    @apply text-purple dark:text-purple-dark;
+  }
 }
 
 @font-face {
@@ -46,4 +55,11 @@
   font-style: normal;
   font-weight: 400;
   src: url('https://fonts.googleapis.com/css2?family=Lexend&display=swap').format('truetype');
+}
+
+@font-face {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 300;
+  src: url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap').format('truetype');
 }
