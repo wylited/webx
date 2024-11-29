@@ -12,6 +12,10 @@
   h2 {
     @apply text-black dark:text-white;
   }
+  span {
+    @apply text-black dark:text-white;
+  }
+
 }
 
 @layer components {

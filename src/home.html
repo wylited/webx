@@ -10,10 +10,9 @@
     </div>
     <div class="text-center font-mono">
         <audio id="audio" src="dist/wheni226.mp3" loop></audio>
-        <p>
+        <p id="song">
             <button id="audioBtn" onclick="togglePlay()"></button>
-            When I 226
-            <button id="themeBtn" onclick="toggleTheme()"></button>
+            When I 226 <span id="duration">00:00</span>
         </p>
     </div>
 </div>
@@ -26,4 +25,15 @@
     <p class="font-mono"><~~ <button>notes</button> ~~></p>
     <p class="font-mono"><-< <a href="https://github.com/wylited" target="_blank">github</a> >-></p>
     <p class="font-mono"><=< <button hx-get="/projects.html" hx-target="#content">projects</button> >=></p>
+</div>
+<div class="flex justify-between items-center mb-1">
+    <div class="content-center">
+    </div>
+    <div class="text-center font-mono">
+        <audio id="audio" src="dist/wheni226.mp3" loop></audio>
+        <span id="time">
+            11:59
+        </span>
+        <button id="themeBtn" onclick="toggleTheme()"></button>
+    </div>
 </div>

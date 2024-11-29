@@ -7,7 +7,7 @@
     "build": "npm run clean && npm run build:css && npm run build:js && npm run build:html && npm run build:audio",
     "clean": "rimraf public/dist",
     "build:css": "tailwindcss -i ./src/input.css -o ./public/dist/style.css --minify",
-    "build:js": "esbuild src/htmx.js --bundle --outfile=public/dist/htmx.min.js --minify && cp src/toggle.js public/",
+    "build:js": "esbuild src/htmx.js --bundle --outfile=public/dist/htmx.min.js --minify && cp src/scripts.js public/",
     "build:html": "cp index.html public/ && cp src/*.html public/",
     "build:audio": "cp src/wheni226.mp3 public/dist/"
   },
