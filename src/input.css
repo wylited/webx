@@ -46,3 +46,10 @@
     @apply text-orange dark:text-orange-dark;
   }
 }
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/dist/JetBrainsMonoNerdFont-Light.woff2') format('woff2');
+    font-weight: 300; /* Adjust according to the font weight */
+    font-style: normal; /* Adjust if you have italic or other styles */
+}
