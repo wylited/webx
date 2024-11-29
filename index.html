@@ -6,54 +6,11 @@
         <title>/home/wyli</title>
         <link href="/dist/style.css" rel="stylesheet">
         <script src="/dist/htmx.min.js"></script>
-        <script>
-         function togglePlay() {
-             const audio = document.getElementById('audio');
-             const button = document.getElementById('audioBtn');
-             if (audio.paused) {
-                 audio.play();
-                 button.textContent = '';
-             } else {
-                 audio.pause();
-                 button.textContent = '';
-             }
-         }
-
-         function toggleTheme() {
-             const html = document.documentElement; // Use html element instead of body
-             html.classList.toggle('dark');
-             const themeButton = document.getElementById('themeBtn');
-             themeButton.textContent = html.classList.contains('dark') ? '' : '';
-         }
-        </script>
+        <script src="/toggle.js"></script>
     </head>
     <body>
         <div class="flex flex-col items-center justify-center min-h-screen w-full py-10 bg-white dark:bg-black-dark">
-            <div class="w-1/2">
-                <div class="flex justify-between items-center">
-                    <div class="content-center">
-                        <h2 class="text-left mb-2 text-purple font-mono dark:text-purple-dark">
-                            $ pwd >
-                            <button hx-get="/api/home">/home/wyli</button>
-                        </h2>
-                    </div>
-                    <div class="text-center font-mono">
-                        <audio id="audio" src="dist/wheni226.mp3" loop></audio>
-                        <p>
-                            <button id="audioBtn" onclick="togglePlay()"></button>
-                            When I 226
-                            <button id="themeBtn" onclick="toggleTheme()"></button>
-                        </p>
-                    </div>
-                </div>
-                <div class="border-y border-black dark:border-white-dark text-center py-4">
-                    <p class="text-3xl">wylited</p>
-                    <p class="text-white dark:text-black-dark">dhairya</p>
-                    <p>International Baccalaureate 'm25</p>
-                    <p class="text-white dark:text-black-dark">Math AA Hl, Physics Hl, Comp Sci Hl, Econ Hl</p>
-                    <h2 class="text-2xl text-yellow underline dark:text-yellow-dark">quick links</h2>
-                    <p>the rest is coming soon trust</p>
-                </div>
+            <div id="content" class="w-1/2" hx-get="/home.html" hx-trigger="load">
             </div>
         </div>
     </body>
