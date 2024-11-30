@@ -1,27 +1,34 @@
 # [My personal web presence](https://wylited.vercel.app)
 
 ## Built With
-- htmx
+- [htmx](https://htmx.org/)
 - tailwindcss
-- hypertext-rs
+- hypertext
 - orgize
 
-## Deploying
+## Updating Prose
 
-Make sure you have the development packages installed
+After cloning the repo and updating `src/prose`
 
 ``` shell
-pnpm install
+cargo run --package webx_api --bin processor -- 
 ```
 
-You also need linux musl
-``` shell
-rustup target add x86_64-unknown-linux-musl
+## Adding a new page
+
+Create a new api binary in `Cargo.toml`
+
+``` toml
+[[bin]]
+name = "name"
+path = "api/name.rs"
 ```
 
-Then you can prebuild the site and deploy it via Vercel CLI
+This will map the endpoint to `/api/name` 
+
+## Deploying prebuilt
 
 ``` shell
-vercel build && vercel deploy --prebuilt
+vercel build && vercel deploy --prebuilt 
 ```
 

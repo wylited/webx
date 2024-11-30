@@ -12,6 +12,10 @@ serde_json = { version = "1", features = ["raw_value"] }
 vercel_runtime = { version = "1" }
 http = "1.1.0"
 hypertext = "0.5.2"
+serde = { version = "1.0.215", features = ["derive"] }
+orgize = "0.10.0-alpha.10"
+anyhow = "1.0.93"
+ureq = "2.11.0"
 
 # You can specify a library for shared here
 [lib]
@@ -30,12 +34,6 @@ path = "api/prose.rs"
 name = "projects"
 path = "api/projects.rs"
 
-
-# Note that you need to provide unique names for each binary:
-# [[bin]]
-# name = "user-id"
-# path = "api/user/[id].rs"
-#
-# [[bin]]
-# name = "group-id"
-# path = "api/group/[id].rs"
+[[bin]]
+name = "processor"
+path = "src/processor.rs"

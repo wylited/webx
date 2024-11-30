@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       c5589369-0681-415e-aebc-ab6efa5bd7c5
+:END:
+#+title: Why taxonomies don't work
+#+filetags: :essay:meta:
+* TODO Why taxonomies don't work
+
+The human brain is flawed in its want to put things into boxes. But physically, a singular item cannot be in two boxes at the same time one of the two boxes encompassing the other.
+<2024-10-20 Sun>

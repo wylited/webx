@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       40adfbbe-dc5d-4c2f-98f6-ed80fb865b3e
+:END:
+#+title: The Guarding Mental Framework
+#+filetags: :essay:psychology:
+* The Guarding Mental Framework
+
+#+begin_quote
+        Peter you are going to die in that stupid costume.
+#+end_quote
+
+We all have our set of mental frameworks, they guide our thinking and processing. Quite often, they change. They could be described as implicit behaviour or even better a mental software, software that constantly updates.
+
+What is the "Guarding" mental framework. I like to think the highest or encompassing mental framework is the one that filters our inputs and outputs. It helps us understand reality and filters how we respond. A popular choice for a guarding mental framework is the stoic philosophy, where one must not react to input, self-control as a means of overcoming emotions, the becoming of the unbiased thinker. A mentat, as Herbet would put it.
+
+Stoicism claims to allow one to understand the /"universal reason"/, described by the Greeks as logos; pure logic itself.
+However, for almost everbody, a guarding mental framework will be far more complex than taking all input and outputting nothing.
+
+Personally, my guarding mental framework is what provides me with *mental stability*. Mental Stability is  highly sought after, as allows people to properly cope with constant change and fluctuations in their life. However, I did not benefit from this since birth, it constantly went through trials and tribulations to achieve what it is today.
+
+Nowadays, the access to revelating information is unrestricted but people fail to act on it. When I was faced with mental challenges, I often times looked to external content to understand how to correct my mental framework. The complexity in the framework, almost like a firewall, arose when I began to pick parts of external frameworks that the best thinkers in humankind have crafted. I picked what felt mentally suitable for me and integrated it into my everyday. This is a part that not everyone can do, although they may be consuming revelating knowledge, it has no real revelation on them.
+
+But although this system of integrating new concepts into our philosophies is not disadvantageous surface level, they can expose flaws in our foundation. What I mean by this is when the revelation is so deep and embeded within you that you need to rework everything from the ground up. I refer to this as /"nuking"/ and I am guilty of doing this way too often. The biggest vulnerability this exposes is that your mental framework is not guarding you. Often times, during my nuking experience, while I am still rebuilding my mental framework, I often feel a surge of emotions, panic, sadness, anger that is uncontrollable and overwhelming. I am further guilty of often doing this with external projects, completly restarting my computer science game 50 hours in or resetting my entire operating system or code editor to remove /"bloat"/. After all, a tower of babel requires a solid foundation first.
+
+I kinda forgot what I wanted to finish this with.
+Probably a major issue in my expression mental framework, kinda concerning.
+Gonna go practice some french text type writing now.
+
+<2024-10-19 Sat>

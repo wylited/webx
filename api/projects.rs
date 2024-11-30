@@ -15,6 +15,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     let content = maud! {
         div class="border-y border-black dark:border-white-dark text-center py-4" {
             p class="text-3xl" { "Projects I've developed" }
+            p { "#coming soon after proses, in the meantime just look at github pinned repositories!" }
         }
     }
     .render()
