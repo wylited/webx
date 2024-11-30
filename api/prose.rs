@@ -23,10 +23,10 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                 Ok(prose_list) => maud! {
                     div class="border-y border-black dark:border-white-dark text-center py-4" {
                         p class="text-3xl" { "Prose" }
-                        p class="text-2xl mb-2" { "Essays, Poems, and more." }
+                        p class="text-2xl" { "Essays, Poems, and more" }
                         div class="flex flex-col" {
                             @for prose in prose_list.iter() {
-                                div class="w-16 my-4 border-t border-gray/20 dark:border-gray-dark/20" {}
+                                div class="w-16 my-4 border-t border-blue/25 dark:border-blue-dark/25" {}
                                 div class="w-full max-w-full text-left ml-4" {
                                     h2 class="text-2xl mb-1" { (prose.title.clone()) " " } span class="text-sm text-gray dark:text-gray-dark font-mono mb-1" { (prose.filename.clone()) }
                                     div class="flex flex-wrap gap-1 p-1" {
