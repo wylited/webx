@@ -48,10 +48,10 @@
 }
 
 @font-face {
-    font-family: 'JetBrains Mono Nerd Font';
-    src: url('/dist/jetbrains.woff2') format('woff2');
+    font-family: 'firacode';
+    src: url('https://www.programmingfonts.org/fonts/resources/firacode/firacode.woff2') format('woff2');
     font-stretch: normal;
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
 }
 

@@ -14,7 +14,7 @@ pub fn header(path_segments: &[String], current_song: &str) -> String {
         div class="flex justify-between items-center mb-1" {
             div class="content-center" {
                 h2 class="text-left text-purple font-mono dark:text-purple-dark" {
-                    "$> "
+                    "<$> "
                     @for segment in path_segments {
                         button
                             class="nav"
@@ -29,8 +29,8 @@ pub fn header(path_segments: &[String], current_song: &str) -> String {
             div class="text-center font-mono" {
                 audio #audio src="dist/wheni226.mp3" loop {}
                 p #song {
-                    button #audioBtn onclick="togglePlay()" {""}
-                    span class="pl-4" { (current_song) } " "
+                    button #audioBtn onclick="togglePlay()" {"|>"}
+                    span class="pl-3" { (current_song) } " "
                     span #duration { "00:00" }
                 }
             }
@@ -52,8 +52,8 @@ pub fn footer() -> String {
                 }
             }
             div class="text-center font-mono" {
-                button #themeBtn onclick="toggleTheme()" {""}
-                span #time class="pl-4" {
+                button #themeBtn onclick="toggleTheme()" {"☀"}
+                span #time class="pl-3" {
                     " "
                 }
             }

@@ -14,7 +14,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Lexend', 'sans-serif'],
-      mono: ['JetBrainsMono Nerd Font', 'monospace'],
+      mono: ['firacode', 'monospace'],
     },
     extend: {
       colors: {
