@@ -1,14 +1,19 @@
 # [My personal web presence](https://wylited.vercel.app)
 
+A ALMOST COMPLETELY RUST WEBSITE!
+
+My personal website features light and dark mode, cool navigation, a blog of prose, and a few other things. It is built with Rust and deployed on Vercel.
+
 ## Built With
 - [htmx](https://htmx.org/)
-- [tailwindcss]
-- hypertext
-- orgize
+- [tailwindcss](https://tailwindcss.com/)
+- [hypertext](https://github.com/vidhanio/hypertext)
+- [orgize](https://github.com/poiscript/orgize)
+- [anyhow](https://github.com/dtolnay/anyhow)
 
 ## Updating Prose
 
-After cloning the repo and updating `src/prose`
+After cloning the repo and updating `src/prose` with more prose
 
 ``` shell
 cargo run --package webx_api --bin processor -- 
