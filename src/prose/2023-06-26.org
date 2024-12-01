@@ -1,5 +1,5 @@
 :PROPERTIES:
-:ID:       d0072402-2a3e-4f4c-b56e-a8d56fd53a77
+i:ID:       trst
 :END:
 #+title: trst
 #+filetags: :poem:greek:

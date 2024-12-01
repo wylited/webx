@@ -36,8 +36,8 @@ name = "projects"
 path = "api/projects.rs"
 
 [[bin]]
-name = "content"
-path = "api/content/[id].rs"
+name = "proseid"
+path = "api/prose/[id].rs"
 
 [[bin]]
 name = "processor"

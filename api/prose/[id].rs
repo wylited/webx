@@ -28,7 +28,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                 Ok(prose_list) => {
                     if let Some(prose) = prose_list.iter().find(|p| p.id == *id) {
                         maud! {
-                            div class="border-y border-black dark:border-white-dark text-center py-4" {
+                            div class="border-y border-black dark:border-white-dark text-center py-4 max-w-prose" {
                                 h1 class="text-3xl mb-2" { (prose.title.clone()) }
                                 p class="text-sm text-gray dark:text-gray-dark mb-4" {
                                     "Type: " (format!("{:?}", prose.prose_type))

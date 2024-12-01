@@ -1,5 +1,5 @@
 :PROPERTIES:
-:ID:       e1b86d14-0e7e-4a1c-9fe4-da98ec7e26a3
+:ID: dnbk
 :END:
 #+title: dnbk
 #+filetags: :story:

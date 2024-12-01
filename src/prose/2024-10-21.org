@@ -1,5 +1,5 @@
 :PROPERTIES:
-:ID:       7e0c53ba-e37c-4acd-a051-3ff6e1ce2714
+:ID:       defamation
 :END:
 #+title: Why defamation of lazy people creates a hardworking population
 #+filetags: :essay:economics:psychology:

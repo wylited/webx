@@ -1,5 +1,5 @@
 :PROPERTIES:
-:ID:       40adfbbe-dc5d-4c2f-98f6-ed80fb865b3e
+:ID:       guarding-framework
 :END:
 #+title: The Guarding Mental Framework
 #+filetags: :essay:psychology:

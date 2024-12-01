@@ -1,7 +1,7 @@
 use hypertext::{html_elements, maud, Renderable, GlobalAttributes};
 use url::Url;
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
-use webx_api::{base, fetch, footer, header, ExtraAttributes, Prose};
+use webx_api::{base, fetch, footer, header, Prose};
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -21,13 +21,13 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
         Ok(json_content) => {
             match serde_json::from_str::<Vec<Prose>>(&json_content) {
                 Ok(prose_list) => maud! {
-                    div #prose-content class="border-y border-black dark:border-white-dark text-center py-4" {
+                    div #prose-content class="border-y border-black dark:border-white-dark text-center py-4 max-w-prose" {
                         p class="text-3xl" { "Prose" }
                         div class="flex flex-col" {
                             @for prose in prose_list.iter() {
                                 div class="w-16 my-4 border-t border-blue/25 dark:border-blue-dark/25" {}
                                 div class="w-full max-w-full text-left ml-4" {
-                                    a class="link text-2xl mb-1 hover:underline hover:decoration-[0.5px]" href=(format!("/content/{}", prose.id)) { (prose.title.clone()) }
+                                    a class="link text-2xl mb-1 hover:underline hover:decoration-[0.5px]" href=(format!("/prose/{}", prose.id)) { (prose.title.clone()) }
                                     span class="text-sm text-gray dark:text-gray-dark font-mono mb-1" { " " (prose.filename.clone())}
                                     div class="flex flex-wrap gap-1 p-1" {
                                         @for tag in &prose.tags {

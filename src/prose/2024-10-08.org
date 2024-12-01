@@ -1,5 +1,5 @@
 :PROPERTIES:
-:ID:       722ef026-d9f8-4812-ad06-79d297151283
+:ID: staplefoodcrisis
 :END:
 #+title: The crisis of staple foods
 #+filetags: :essay:economics:food:

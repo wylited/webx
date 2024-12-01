@@ -1,7 +1,7 @@
 use hypertext::{html_elements, maud, Renderable, GlobalAttributes};
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
 
-use webx_api::{base, footer, header, ExtraAttributes};
+use webx_api::{base, footer, header};
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {

@@ -1,5 +1,5 @@
 :PROPERTIES:
-:ID:       697ef8a2-b908-40ee-9f71-234ac532ba72
+:ID:       artist-standpoint
 :END:
 #+title: An artists tendency to have strong standpoints
 #+filetags: :essay:art:protests:crucible:communism:misogyny:american:plays:

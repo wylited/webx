@@ -1,8 +1,8 @@
 :PROPERTIES:
-:ID:       a1a7a731-1c82-4922-92ba-1c41f4b4c97c
+:ID:       creativity
 :END:
 #+title: Creativity is not a competition
 #+filetags: :idk:
-* Creativity is not a competition.
+* TODO Creativity is not a competition.
 Is what my favorite shirt says, but isn't it?
 <2024-10-22 Tue>
