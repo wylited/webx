@@ -4,7 +4,6 @@
 #+title: Paper 1 broad skills
 #+filetags: :essay:english:guide:
 
-* Paper 1 broad skills
 ** The Guiding Questions and Theses
 It's probably impossible to emphasize just how much this matters. If you do not center your analysis around the guiding question, you will *not* get high marks. Simple as that.
 Let's look at a range of guiding questions:

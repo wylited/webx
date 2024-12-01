@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       sun
+:END:
+#+title: sun
+#+filetags: :poem:
+
+And hey,\
+if your sun shines, \ so will mine. \
+<2023-12-16 Sun>

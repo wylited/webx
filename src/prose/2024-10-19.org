@@ -3,7 +3,6 @@
 :END:
 #+title: The Guarding Mental Framework
 #+filetags: :essay:psychology:
-* The Guarding Mental Framework
 
 #+begin_quote
         Peter you are going to die in that stupid costume.

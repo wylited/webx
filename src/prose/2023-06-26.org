@@ -4,7 +4,6 @@ i:ID:       trst
 #+title: trst
 #+filetags: :poem:greek:
 
-* trst
 Thirsty
 you let me have just a sip, from your glass of water.
 quenching my thirst, yet I yearn for more.
