@@ -19,6 +19,7 @@ pub fn fetch(url: &str) -> anyhow::Result<String> {
 pub trait ExtraAttributes: GlobalAttributes {
     const hx_get: Attribute = Attribute;
     const hx_target: Attribute = Attribute;
+    const hx_swap: Attribute = Attribute;
     const onclick: Attribute = Attribute;
 }
 
@@ -44,7 +45,7 @@ pub fn header(path_segments: &[String], current_song: &str) -> String {
             div class="text-center font-mono" {
                 audio #audio src="dist/wheni226.mp3" loop {}
                 p #song {
-                    button #audioBtn onclick="togglePlay()" {"|>"}
+                    button #audioBtn class="link" onclick="togglePlay()" {"|>"}
                     span class="pl-2" { (current_song) } " "
                     span #duration { "00:00" }
                 }
@@ -61,13 +62,13 @@ pub fn footer() -> String {
             div class="content-center" {
                 h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                     "© 2024 "
-                        a href="https://github.com/wylited/webx" {
+                        a class="link" href="https://github.com/wylited/webx" {
                             "webx"
                         }
                 }
             }
             div class="text-center font-mono" {
-                button #themeBtn onclick="toggleTheme()" {"☀"}
+                button #themeBtn class="link" onclick="toggleTheme()" {"☀"}
                 span #time class="pl-3" {
                     " "
                 }

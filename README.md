@@ -2,7 +2,7 @@
 
 ## Built With
 - [htmx](https://htmx.org/)
-- tailwindcss
+- [tailwindcss]
 - hypertext
 - orgize
 

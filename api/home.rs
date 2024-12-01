@@ -25,7 +25,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
             }
             p class="font-mono" {
                 "<~~ "
-                button
+                button class="link"
                     hx-get="/api/prose"
                     hx-target="#content"
                 { "prose" }
@@ -33,17 +33,17 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
             }
             p class="font-mono" {
                 "<~~ "
-                button { "notes" }
+                button class="link" { "notes" }
                 " ~~>"
             }
             p class="font-mono" {
                 "<-< "
-                a href="https://github.com/wylited" target="_blank" { "github" }
+                a class="link" href="https://github.com/wylited" target="_blank" { "github" }
                 " >->"
             }
             p class="font-mono" {
                 "<=< "
-                button
+                button class="link"
                     hx-get="/api/projects"
                     hx-target="#content"
                 { "projects" }

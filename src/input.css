@@ -19,23 +19,15 @@
 }
 
 @layer components {
-  button {
+  .link {
     @apply text-blue dark:text-blue-dark; /* Base styles for all buttons */
     transition: color 0.3s; /* Smooth transition for hover effect */
   }
 
-  button:hover {
+  .link:hover {
     @apply text-red dark:text-red-dark; /* Change text color on hover */
   }
 
-  a {
-    @apply text-blue dark:text-blue-dark; /* Base styles for all buttons */
-    transition: color 0.3s; /* Smooth transition for hover effect */
-  }
-
-  a:hover {
-    @apply text-red dark:text-red-dark; /* Change text color on hover */
-  }
 
   .nav {
     @apply text-green dark:text-green-dark underline;

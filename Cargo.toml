@@ -16,6 +16,7 @@ serde = { version = "1.0.215", features = ["derive"] }
 orgize = "0.10.0-alpha.10"
 anyhow = "1.0.93"
 ureq = "2.11.0"
+url = "2.5.4"
 
 # You can specify a library for shared here
 [lib]
@@ -35,5 +36,10 @@ name = "projects"
 path = "api/projects.rs"
 
 [[bin]]
+name = "content"
+path = "api/content/[id].rs"
+
+[[bin]]
 name = "processor"
 path = "src/processor.rs"
+
