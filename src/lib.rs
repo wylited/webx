@@ -187,7 +187,7 @@ pub fn base(content: &str) -> String {
                 script src="/dist/htmx.min.js" {}
                 script src="/scripts.js" {}
             }
-            body class="bg-white dark:bg-black-dark p-10 max-w-full overflow-hidden" {
+            body class="bg-white dark:bg-black-dark p-10 max-w-full" {
                 div class="flex flex-col items-center justify-center min-h-screen w-full max-w-full"{
                     div class="max-w-full" {
                         (Raw(content))
