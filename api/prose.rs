@@ -1,6 +1,7 @@
 use hypertext::{html_elements, maud, Renderable, GlobalAttributes};
+use url::Url;
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
-use webx_api::{fetch, footer, header, Prose, ExtraAttributes};
+use webx_api::{base, fetch, footer, header, ExtraAttributes, Prose};
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -10,12 +11,11 @@ async fn main() -> Result<(), Error> {
 pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
     let paths = vec!["home".to_string(), "prose".to_string()];
     let song = "When I 226";
-    let uri = req.uri().to_string();
+    let mut url = Url::parse(&req.uri().to_string()).unwrap();
 
-    let base_uri = uri.strip_suffix("/api/prose")
-        .unwrap_or(&uri);
+    url.set_path("/dist/prose.json");
 
-    let json_url = format!("{}/dist/prose.json", base_uri);
+    let json_url = url.as_str();
 
     let content = match fetch(&json_url) {
         Ok(json_content) => {
@@ -23,14 +23,12 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                 Ok(prose_list) => maud! {
                     div #prose-content class="border-y border-black dark:border-white-dark text-center py-4" {
                         p class="text-3xl" { "Prose" }
-                        p class="text-2xl" { "Essays, Poems, and more" }
                         div class="flex flex-col" {
                             @for prose in prose_list.iter() {
                                 div class="w-16 my-4 border-t border-blue/25 dark:border-blue-dark/25" {}
-                                button class="w-full max-w-full text-left ml-4"
-                                    hx-get=(format!("/api/content/{}", prose.id))
-                                    hx-target="#prose-content" {
-                                    h2 class="text-2xl mb-1" { (prose.title.clone()) " " } span class="text-sm text-gray dark:text-gray-dark font-mono mb-1" { (prose.filename.clone()) }
+                                div class="w-full max-w-full text-left ml-4" {
+                                    a class="link text-2xl mb-1 hover:underline hover:decoration-[0.5px]" href=(format!("/content/{}", prose.id)) { (prose.title.clone()) }
+                                    span class="text-sm text-gray dark:text-gray-dark font-mono mb-1" { " " (prose.filename.clone())}
                                     div class="flex flex-wrap gap-1 p-1" {
                                         @for tag in &prose.tags {
                                             span class="px-1 py-0.5 bg-gray/25 dark:bg-gray-dark/25 text-sm" {
@@ -61,7 +59,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
         }.render().into_inner()
     };
 
-    let page = format!("{}{}{}", header(&paths, song), content, footer());
+    let page = base(&format!("{}{}{}", header(&paths, song), content, footer()));
 
     Ok(Response::builder()
        .status(StatusCode::OK)

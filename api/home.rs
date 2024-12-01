@@ -1,7 +1,7 @@
 use hypertext::{html_elements, maud, Renderable, GlobalAttributes};
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
 
-use webx_api::{header, footer, ExtraAttributes};
+use webx_api::{base, footer, header, ExtraAttributes};
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -25,15 +25,14 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
             }
             p class="font-mono" {
                 "<~~ "
-                button class="link"
-                    hx-get="/api/prose"
-                    hx-target="#content"
+                a class="link"
+                    href="/prose"
                 { "prose" }
                 " ~~>"
             }
             p class="font-mono" {
                 "<~~ "
-                button class="link" { "notes" }
+                a class="link" { "notes" }
                 " ~~>"
             }
             p class="font-mono" {
@@ -43,9 +42,8 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
             }
             p class="font-mono" {
                 "<=< "
-                button class="link"
-                    hx-get="/api/projects"
-                    hx-target="#content"
+                a class="link"
+                    href="/projects"
                 { "projects" }
                 " >=>"
             }
@@ -54,7 +52,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     .render()
     .into_inner();
 
-    let page = format!("{}{}{}", header(&paths, song), content, footer());
+    let page = base(&format!("{}{}{}", header(&paths, song), content, footer()));
 
     Ok(Response::builder()
        .status(StatusCode::OK)

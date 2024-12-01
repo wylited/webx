@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use hypertext::{maud, Renderable, html_elements, GlobalAttributes, Raw};
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
-use webx_api::{fetch, Prose};
+use webx_api::{base, fetch, footer, header, Prose};
 use url::Url;
 
 #[tokio::main]
@@ -15,6 +15,9 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
     let hash_query: HashMap<String, String> = url.query_pairs().into_owned().collect();
     let id = hash_query.get("id").unwrap();
 
+    let paths = vec!["home".to_string(), "prose".to_string(), id.clone()];
+    let song = "When I 226";
+
     url.set_path("/dist/prose.json");
 
     let json_url = url.as_str();
@@ -25,7 +28,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                 Ok(prose_list) => {
                     if let Some(prose) = prose_list.iter().find(|p| p.id == *id) {
                         maud! {
-                            div class="text-center" {
+                            div class="border-y border-black dark:border-white-dark text-center py-4" {
                                 h1 class="text-3xl mb-2" { (prose.title.clone()) }
                                 p class="text-sm text-gray dark:text-gray-dark mb-4" {
                                     "Type: " (format!("{:?}", prose.prose_type))
@@ -38,36 +41,38 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                                         }
                                     }
                                 }
-                            }
-                            div class="prose dark:prose-invert max-w-none text-left ml-2" {
-                                (Raw(&prose.html))
+                                div class="prose dark:prose-invert max-w-none text-left ml-2" {
+                                    (Raw(&prose.html))
+                                }
                             }
                         }.render().into_inner()
                     } else {
                         maud! {
-                            div class="text-center py-4" {
+                            div class="border-y border-black dark:border-white-dark text-center py-4" {
                                 p class="text-red-600" { "Prose " (id) " not found" }
                             }
                         }.render().into_inner()
                     }
                 },
                 Err(e) => maud! {
-                    div class="text-center py-4" {
+                    div class="border-y border-black dark:border-white-dark text-center py-4" {
                         p class="text-red-600" { "Error parsing prose data!: " (e.to_string()) " from " (json_url) }
                     }
                 }.render().into_inner()
             }
         },
         Err(e) => maud! {
-            div class="text-center py-4" {
+            div class="border-y border-black dark:border-white-dark text-center py-4" {
                 p class="text-red-600" { "Error fetching prose: " (e.to_string()) }
             }
         }.render().into_inner()
     };
 
+    let page = base(&format!("{}{}{}", header(&paths, song), content, footer()));
+
     Ok(Response::builder()
         .status(StatusCode::OK)
         .header("Content-Type", "text/html")
-        .body(Body::Text(content))?
+        .body(Body::Text(page))?
     )
 }

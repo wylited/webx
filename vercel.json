@@ -7,7 +7,7 @@
     }
   },
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/", "dest": "/index.html" }
-  ]
+    { "src": "/(.*)", "dest": "/api/$1" },
+    { "src": "/", "dest": "/api/home" },
+    { "handle": "filesystem" }  ]
 }
