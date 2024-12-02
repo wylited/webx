@@ -1,8 +1,6 @@
 # [My personal web presence](https://wylited.vercel.app)
 
-A ALMOST COMPLETELY RUST WEBSITE!
-
-My personal website features light and dark mode, cool navigation, a blog of prose, and a few other things. It is built with Rust and deployed on Vercel.
+A highly opinonated, minimalistic, and blazingly fast personal website written in Rust.
 
 ## Built With
 - [htmx](https://htmx.org/)

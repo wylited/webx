@@ -14,7 +14,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
 
     let content = maud! {
         div class="border-y border-black dark:border-white-dark text-center py-4" {
-            p class="text-3xl" { "wylited" }
+            p class="text-3xl" { "wylited "  span class="text-xl text-gray dark:text-gray" {"- /ˈwaɪˌlaɪtɪd/"} }
             p class="text-white dark:text-black-dark" { "dhairya" }
             p { "International Baccalaureate 'm25" }
             p class="text-white dark:text-black-dark" {
