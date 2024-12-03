@@ -8,7 +8,7 @@
     "clean": "rimraf public/dist",
     "build:css": "tailwindcss -i ./src/input.css -o ./public/dist/style.css --minify",
     "build:js": "esbuild src/htmx.js --bundle --outfile=public/dist/htmx.min.js --minify && cp src/scripts.js public/",
-    "build:assets": "cp src/wheni226.mp3 public/dist/ && cp src/jetbrains.woff2 public/dist/ && cp src/prose.json public/dist/"
+    "build:assets": "cp src/wheni226.mp3 public/dist/ && cp src/jetbrains.woff2 public/dist/ && cp src/prose.json public/dist/ && cp src/favicon.ico public/"
   },
   "dependencies": {
     "htmx.org": "^1.9.12"
