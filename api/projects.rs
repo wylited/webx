@@ -1,7 +1,6 @@
 use hypertext::{html_elements, maud, Renderable, GlobalAttributes};
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
 
-use webx_api::{header, footer};
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -13,7 +12,21 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     let song = "When I 226";
 
     let content = maud! {
-        div class="border-y border-black dark:border-white-dark text-center py-4" {
+        fieldset #content class="border-y border-black dark:border-white-dark text-center py-4" {
+            legend class="mx-3 px-2" {
+                h2 class="text-left text-purple font-mono dark:text-purple-dark" {
+                    "<$> "
+                        @for segment in paths.clone() {
+                            a
+                                class="nav"
+                                href={ "/" (segment.clone()) "#content" }
+                                target="htmz"
+                            {
+                                (segment) "/"
+                            }
+                        }
+                }
+            }
             p class="text-3xl" { "Projects I've developed" }
             p { "#coming soon after proses, in the meantime just look at github pinned repositories!" }
         }
@@ -21,14 +34,12 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     .render()
     .into_inner();
 
-    let page = format!("{}{}{}", header(&paths, song), content, footer());
-
     Ok(Response::builder()
        .status(StatusCode::OK)
        .header("Content-Type", "text/html")
        .body(
            Body::Text(
-               page
+               content
            )
        )?
     )

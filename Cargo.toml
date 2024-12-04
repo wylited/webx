@@ -24,6 +24,10 @@ path = "src/lib.rs"
 
 # Each handler has to be specified as [[bin]]
 [[bin]]
+name = "root"
+path = "api/root.rs"
+
+[[bin]]
 name = "home"
 path = "api/home.rs"
 
@@ -38,6 +42,10 @@ path = "api/projects.rs"
 [[bin]]
 name = "proseid"
 path = "api/prose/[id].rs"
+
+[[bin]]
+name = "rootid"
+path = "api/root/[id].rs"
 
 [[bin]]
 name = "processor"

@@ -1,9 +1,10 @@
 use std::collections::HashMap;
 
-use hypertext::{maud, Renderable, html_elements, GlobalAttributes, Raw};
-use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
-use webx_api::{fetch, Prose};
+use hypertext::{html_elements, maud, GlobalAttributes, Raw, Renderable};
 use url::Url;
+use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
+
+use webx_api::{base, fetch, footer, header, Prose};
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -19,7 +20,6 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
     let song = "When I 226";
 
     url.set_path("/dist/prose.json");
-
     let json_url = url.as_str();
 
     let content = match fetch(&json_url) {
@@ -28,14 +28,14 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                 Ok(prose_list) => {
                     if let Some(prose) = prose_list.iter().find(|p| p.id == *id) {
                         maud! {
-                            fieldset class="border-y border-black dark:border-white-dark text-center py-4 max-w-prose" {
+                            fieldset #content class="border-y border-black dark:border-white-dark text-center py-4 max-w-prose" {
                                 legend class="mx-3 px-2" {
                                     h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                                         "<$> "
-                                            @for segment in &paths {
+                                            @for segment in paths.clone() {
                                                 a
                                                     class="nav"
-                                                    href={ "/" (segment) "#content" }
+                                                    href={"/" (segment.clone()) "#content" }
                                                 target="htmz"
                                                 {
                                                     (segment) "/"
@@ -43,11 +43,10 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                                             }
                                     }
                                 }
-
                                 h1 class="text-3xl mb-2" { (prose.title.clone()) }
                                 p class="text-sm text-gray dark:text-gray-dark mb-4" {
                                     "Type: " (format!("{:?}", prose.prose_type))
-                                        " | Source: " (prose.filename.clone()) " | permalink: " a class="link" href={ "/root/" (prose.id.clone()) } { (prose.id.clone()) }
+                                        " | Source: " (prose.filename.clone()) " | Permalink: " a href={ "/root/" (prose.id.clone()) "#content" } target="htmz" { (prose.id.clone()) }
                                 }
                                 div class="flex flex-wrap gap-1 mb-4 justify-center" {
                                     @for tag in &prose.tags {
@@ -67,10 +66,10 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                                 legend class="mx-3 px-2" {
                                     h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                                         "<$> "
-                                            @for segment in &paths {
+                                            @for segment in paths.clone() {
                                                 a
                                                     class="nav"
-                                                    href={ "/" (segment) "#content" }
+                                                    href={ "/" (segment.clone()) "#content" }
                                                 target="htmz"
                                                 {
                                                     (segment) "/"
@@ -88,10 +87,10 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                         legend class="mx-3 px-2" {
                             h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                                 "<$> "
-                                    @for segment in &paths {
+                                    @for segment in paths.clone() {
                                         a
                                             class="nav"
-                                            href={ "/" (segment) "#content" }
+                                            href={ "/" (segment.clone()) "#content" }
                                         target="htmz"
                                         {
                                             (segment) "/"
@@ -109,10 +108,10 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                 legend class="mx-3 px-2" {
                     h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                         "<$> "
-                            @for segment in &paths {
+                            @for segment in paths.clone() {
                                 a
                                     class="nav"
-                                    href={ "/" (segment) "#content" }
+                                    href={ "/" (segment.clone()) "#content" }
                                 target="htmz"
                                 {
                                     (segment) "/"
@@ -125,9 +124,15 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
         }.render().into_inner()
     };
 
+    let page = base(&format!("{}{}{}", header(&paths, song), content, footer()));
+
     Ok(Response::builder()
-        .status(StatusCode::OK)
-        .header("Content-Type", "text/html")
-        .body(Body::Text(content))?
+       .status(StatusCode::OK)
+       .header("Content-Type", "text/html")
+       .body(
+           Body::Text(
+               page
+           )
+       )?
     )
 }

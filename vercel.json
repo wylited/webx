@@ -7,9 +7,11 @@
     }
   },
   "routes": [
-    { "src": "/", "dest": "/api/home" },
+    { "src": "/", "dest": "/api/root" },
     { "src": "/prose/(?<id>[^/]+)", "dest": "/api/prose/[id]?id=$id" },
     { "src": "/prose/([^/]+)$", "dest": "/api/prose/[id]?id=$1" },
+    { "src": "/root/(?<id>[^/]+)", "dest": "/api/root/[id]?id=$id" },
+    { "src": "/root/([^/]+)$", "dest": "/api/root/[id]?id=$1" },
     { "src": "/(.*)", "dest": "/api/$1" },
     { "handle": "filesystem" }  ]
 }
