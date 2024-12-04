@@ -34,6 +34,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
             p class="text-white dark:text-black-dark" {
                 "Math AA Hl, Physics Hl, Comp Sci Hl, Econ Hl"
             }
+            a class="link" href="/root/szns" target="htmz" { "feat. prose" }
             h2 class="text-2xl text-yellow dark:text-yellow-dark py-2" {
                 "quick links"
             }
