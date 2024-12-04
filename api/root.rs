@@ -68,7 +68,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     .render()
     .into_inner();
 
-    let page = base(&format!("{}{}{}", header(&paths, song), content, footer()));
+    let page = base(&format!("{}{}{}", header(song), content, footer()));
 
     Ok(Response::builder()
        .status(StatusCode::OK)

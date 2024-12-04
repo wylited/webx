@@ -37,17 +37,27 @@
   .nav:hover {
     @apply text-orange dark:text-orange-dark;
   }
+
+  fieldset#content {
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+    will-change: max-height;
+  }
+  
+  fieldset#content.transitioning {
+    transition: max-height 0.5s ease-in;
+  }
 }
 
 @font-face {
     font-family: 'firacode';
     src: url('https://www.programmingfonts.org/fonts/resources/firacode/firacode.woff2') format('woff2');
-    font-stretch: normal;
-    font-weight: normal;
+    font-display: swap;
+    font-weight: 400;
     font-style: normal;
 }
 
 * {
-  text-rendering: optimizeLegibility;
-  font-variant-ligatures: normal;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: normal;
 }

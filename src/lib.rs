@@ -27,7 +27,7 @@ pub trait ExtraAttributes: GlobalAttributes {
 
 impl<T: GlobalAttributes> ExtraAttributes for T {}
 
-pub fn header(path_segments: &[String], current_song: &str) -> String {
+pub fn header(current_song: &str) -> String {
     maud! {
         div class="flex justify-between items-center mb-1" {
             div class="content-center" {
@@ -189,7 +189,7 @@ pub fn base(content: &str) -> String {
                 script src="/scripts.js" {}
             }
             body class="bg-white dark:bg-black-dark p-10 max-w-full max-h-screen" {
-                iframe hidden name="htmz" onload="setTimeout(()=>document.querySelector(contentWindow.location.hash||null)?.replaceWith(...contentDocument.body.childNodes))" {}
+                iframe hidden name="htmz" onload="handleHtmzTransition(this)" {}
                 div class="flex flex-col items-center justify-center min-h-screen w-full max-w-full"{
                     div class="max-w-full" {
                         (Raw(content))
