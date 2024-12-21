@@ -16,7 +16,6 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
     let id = hash_query.get("id").unwrap();
 
     let paths = vec!["home".to_string(), "prose".to_string(), id.clone()];
-    let song = "When I 226";
 
     url.set_path("/dist/prose.json");
 

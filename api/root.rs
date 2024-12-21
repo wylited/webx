@@ -28,13 +28,19 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
                         }
                 }
             }
-            p class="text-3xl" { "wylited "  span class="text-xl text-gray dark:text-gray" {"- /ˈwaɪˌlaɪtɪd/"} }
+            p class="text-3xl" {
+                span class="text-lg text-gray dark:text-gray" {"{વાયલાઈટેડ} -" }
+                " wylited "
+                span class="text-lg text-gray dark:text-gray" {"- ˈwaɪˌlaɪtɪd"}
+            }
             p class="text-white dark:text-black-dark" { "dhairya" }
             p { "International Baccalaureate 'm25" }
             p class="text-white dark:text-black-dark" {
                 "Math AA Hl, Physics Hl, Comp Sci Hl, Econ Hl"
             }
-            a class="link" href="/root/szns" { "feat. prose" }
+            p class="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-[33%] after:h-[4px] after:bg-orange dark:after:bg-orange-dark" {
+                "Currently Reading: Freakonomics"
+            }
             h2 class="text-2xl text-yellow dark:text-yellow-dark py-2" {
                 "quick links"
             }

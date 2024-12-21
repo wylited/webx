@@ -59,7 +59,7 @@ function toggleTheme() {
   const html = document.documentElement; // Use html element instead of body
   html.classList.toggle('dark');
   const themeButton = document.getElementById('themeBtn');
-  themeButton.textContent = html.classList.contains('dark') ? '☀' : '☽';
+  themeButton.textContent = html.classList.contains('dark') ? '☼' : '☾';
 }
 
 function updateTime() {

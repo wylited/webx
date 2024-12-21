@@ -69,7 +69,7 @@ pub fn footer() -> String {
                 }
             }
             div class="text-center font-mono" {
-                button #themeBtn class="link" onclick="toggleTheme()" {"☀"}
+                button #themeBtn class="link text-xl" onclick="toggleTheme()" {"☀"}
                 span #time class="pl-3" {
                     " "
                 }
@@ -162,7 +162,7 @@ pub fn parse_file(path: &PathBuf) -> Result<Prose> {
 pub fn base(content: &str) -> String {
     maud! {
         !DOCTYPE
-        html lang="en" class="dark" {
+        html lang="en" class="" {
             head {
                 meta charset="UTF-8";
                 meta name="viewport" content="width=device-width, initial-scale=1.0";
@@ -191,7 +191,7 @@ pub fn base(content: &str) -> String {
             body class="bg-white dark:bg-black-dark p-10 max-w-full max-h-screen" {
                 iframe hidden name="htmz" onload="handleHtmzTransition(this)" {}
                 div class="flex flex-col items-center justify-center min-h-screen w-full max-w-full"{
-                    div class="max-w-full" {
+                    div class="max-w-full w-full md:w-3/4 lg:w-1/2" {
                         (Raw(content))
                     }
                 }

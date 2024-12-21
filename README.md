@@ -32,6 +32,20 @@ path = "api/name.rs"
 
 This will map the endpoint to `/api/name` 
 
+## Local Development
+
+First compile all the local pages (rust binaries).
+
+``` shell
+cargo build --release
+```
+
+And then start a dev server
+
+``` shell
+vercel dev
+```
+
 ## Deploying prebuilt
 
 ``` shell
