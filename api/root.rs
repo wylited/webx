@@ -54,7 +54,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
             }
             p class="font-mono" {
                 "<~~ "
-                a class="link" { "notes" }
+                a class="link" href="https://wyroam.vercel.app" { "notes" }
                 " ~~>"
             }
             p class="font-mono" {

@@ -185,7 +185,7 @@ pub fn base(content: &str) -> String {
                 link
                     href="/dist/style.css"
                     rel="stylesheet";
-                script src="/dist/htmx.min.js" {}
+                // script src="/dist/htmx.min.js" {}
                 script src="/scripts.js" {}
             }
             body class="bg-white dark:bg-black-dark p-10 max-w-full max-h-screen" {
