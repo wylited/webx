@@ -17,6 +17,7 @@ orgize = "0.10.0-alpha.10"
 anyhow = "1.0.93"
 ureq = "2.11.0"
 url = "2.5.4"
+fuzzy-matcher = "0.3.7"
 
 # You can specify a library for shared here
 [lib]
@@ -38,6 +39,10 @@ path = "api/prose.rs"
 [[bin]]
 name = "projects"
 path = "api/projects.rs"
+
+[[bin]]
+name = "prose-search"
+path = "api/search.rs"
 
 [[bin]]
 name = "proseid"

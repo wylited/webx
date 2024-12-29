@@ -40,7 +40,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
                     "International Baccalaureate 'm25"
                 }
                 span class="absolute left-0 top-0 inline-block opacity-0 transition-opacity duration-300 group-hover:opacity-100 w-full" {
-                    "Math AA Hl, Physics Hl, Comp Sci Hl, Econ Hl"
+                    "Math AA HL, Physics HL, Comp Sci HL, Econ HL"
                 }
             }
             p class="mb-2 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-[49%] after:h-[4px] after:bg-orange dark:after:bg-orange-dark" {

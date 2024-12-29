@@ -1,5 +1,7 @@
 #![allow(non_upper_case_globals)]
 use anyhow::Result;
+use fuzzy_matcher::skim::SkimMatcherV2;
+use fuzzy_matcher::FuzzyMatcher;
 use hypertext::{html_elements, maud, Attribute, GlobalAttributes, Raw, Renderable};
 use orgize::Org;
 use serde::{Deserialize, Serialize};
@@ -18,6 +20,9 @@ pub fn fetch(url: &str) -> anyhow::Result<String> {
 
 pub trait ExtraAttributes: GlobalAttributes {
     const hx_get: Attribute = Attribute;
+    const hx_post: Attribute = Attribute;
+    const hx_trigger: Attribute = Attribute;
+    const hx_indicator: Attribute = Attribute;
     const hx_target: Attribute = Attribute;
     const hx_swap: Attribute = Attribute;
     const hx_push_url: Attribute = Attribute;
@@ -168,7 +173,7 @@ pub fn base(content: &str) -> String {
                 meta name="viewport" content="width=device-width, initial-scale=1.0";
                 title { "wypage" }
                 link
-                    rel="preload"
+                    rel="preconnect"
                     href="https://www.programmingfonts.org/fonts/resources/firacode/firacode.woff2"
                     as="font"
                     type="font/woff2";
@@ -185,7 +190,7 @@ pub fn base(content: &str) -> String {
                 link
                     href="/dist/style.css"
                     rel="stylesheet";
-                // script src="/dist/htmx.min.js" {}
+                // script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js" {}
                 script src="/scripts.js" {}
             }
             body class="bg-white dark:bg-black-dark p-10 max-w-full max-h-screen" {
@@ -200,4 +205,36 @@ pub fn base(content: &str) -> String {
     }
     .render()
     .into_inner()
+}
+
+impl Prose {
+    pub fn matches_fuzzy(&self, query: &str) -> Option<i64> {
+        let matcher = SkimMatcherV2::default();
+
+        // Create a combined string of searchable fields
+        let searchable_text = format!(
+            "{} {} {}",
+            self.title,
+            // self.org, to decide
+            self.tags.join(" "),
+            self.filename
+        );
+
+        // Return the match score if there's a match
+        matcher.fuzzy_match(&searchable_text, query)
+    }
+
+    pub fn search_collection(prose_collection: &[Prose], query: &str) -> Vec<Prose> {
+        let mut matches: Vec<(i64, Prose)> = prose_collection
+            .iter()
+            .filter_map(|prose| {
+                prose
+                    .matches_fuzzy(query)
+                    .map(|score| (score, prose.clone()))
+            })
+            .collect();
+
+        matches.sort_by(|a, b| b.0.cmp(&a.0));
+        matches.into_iter().map(|(_, prose)| prose).collect()
+    }
 }

@@ -1,3 +1,4 @@
+use webx_api::ExtraAttributes;
 use hypertext::{html_elements, maud, Renderable, GlobalAttributes};
 use url::Url;
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
@@ -36,13 +37,21 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                             }
                         }
 
-                        p class="text-3xl" { "Prose" }
-                        div class="flex flex-col" {
+                        div class="flex items-center justify-between px-4 pt-4" {
+                            h1 class="text-3xl" { "Prose" }
+                            form action="/search#results" target="htmz" class="flex items-center" {
+                                input name="query" placeholder="query" class="text-black dark:text-white bg-white dark:bg-black-dark focus:outline-none border border-gray dark:border-gray-dark rounded-l-md p-2" {}
+                                button class="text-black dark:text-white rounded-r-md p-2 transition-colors duration-300 ease-in-out dark:hover:border-red border border-gray dark:border-gray-dark hover:border-red focus:outline-none focus:border-red dark:focus:border-red-dark" { "search" }
+                            }
+                        }
+                        div #results class="flex flex-col" {
                             @for prose in prose_list.iter() {
                                 div class="w-16 my-4 border-t border-blue/25 dark:border-blue-dark/25" {}
                                 div class="w-full max-w-full text-left ml-4" {
-                                    a class="link text-2xl mb-1 hover:underline hover:decoration-[0.5px]" href=(format!("/prose/{}#content", prose.id)) target="htmz" { (prose.title.clone()) }
-                                    span class="text-sm text-gray dark:text-gray-dark font-mono m-1 p-0.5 outline rounded-sm outline-1 outline-gray/25 dark:outline-gray-dark/25" {(prose.filename.clone())}
+                                    a class="link text-xl mb-1 hover:underline hover:decoration-[0.5px]" href=(format!("/prose/{}#content", prose.id)) target="htmz" {
+                                        (prose.title.clone())
+                                        span class="ml-1 text-sm text-gray dark:text-gray-dark font-mono p-0.5 outline rounded-sm outline-1 outline-gray/25 dark:outline-gray-dark/25 align-middle" {(prose.filename.clone())}
+                                    }
                                     div class="flex flex-wrap gap-1 p-1" {
                                         @for tag in &prose.tags {
                                             span class="px-1 py-0.5 bg-gray/25 dark:bg-gray-dark/25 text-sm" {

@@ -2,7 +2,7 @@
 :ID:       seasons
 :END:
 #+title: seasons
-#+filetags: :poem:seasons:
+#+filetags: :poem:seasons:favs:
 
 - When seasons change, I feel dead \\
 
