@@ -41,7 +41,7 @@ name = "projects"
 path = "api/projects.rs"
 
 [[bin]]
-name = "prose-search"
+name = "search"
 path = "api/search.rs"
 
 [[bin]]

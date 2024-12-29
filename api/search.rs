@@ -1,7 +1,5 @@
 use std::collections::HashMap;
 
-use serde::Deserialize;
-use webx_api::ExtraAttributes;
 use hypertext::{html_elements, maud, Renderable, GlobalAttributes};
 use url::Url;
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};

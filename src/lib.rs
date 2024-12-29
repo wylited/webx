@@ -193,7 +193,7 @@ pub fn base(content: &str) -> String {
                 // script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js" {}
                 script src="/scripts.js" {}
             }
-            body class="bg-white dark:bg-black-dark p-10 max-w-full max-h-screen" {
+            body class="bg-white dark:bg-black-dark p-10 max-w-full max-h-screen transition-colors duration-300 ease-in-out" {
                 iframe hidden name="htmz" onload="handleHtmzTransition(this)" {}
                 div class="flex flex-col items-center justify-center min-h-screen w-full max-w-full"{
                     div class="max-w-full w-full md:w-3/4 lg:w-1/2" {
