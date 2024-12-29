@@ -13,14 +13,14 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     let song = "When I 226";
 
     let content = maud! {
-        fieldset #content class="border-y border-black dark:border-white-dark text-center py-4" {
+        fieldset #content class="border-y border-black dark:border-white-dark text-center pb-2" {
             legend class="mx-3 px-2" {
                 h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                     "<$> "
-                        @for segment in paths.clone() {
+                        @for segment in &paths {
                             a
                                 class="nav"
-                                href={ "/" (segment.clone()) "#content" }
+                                href={ "/" (segment) "#content" }
                                 target="htmz"
                             {
                                 (segment) "/"
@@ -28,18 +28,11 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
                         }
                 }
             }
-            p class="text-3xl" {
-                span class="text-lg text-gray dark:text-gray" {"{વાયલાઈટેડ} -" }
-                " wylited "
-                span class="text-lg text-gray dark:text-gray" {"- ˈwaɪˌlaɪtɪd"}
-            }
+            p class="text-3xl" { "wylited "  span class="text-xl text-gray dark:text-gray" {"- /ˈwaɪˌlaɪtɪd/"} }
             p class="text-white dark:text-black-dark" { "dhairya" }
             p { "International Baccalaureate 'm25" }
             p class="text-white dark:text-black-dark" {
                 "Math AA Hl, Physics Hl, Comp Sci Hl, Econ Hl"
-            }
-            p class="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-[33%] after:h-[4px] after:bg-orange dark:after:bg-orange-dark" {
-                "Currently Reading: Freakonomics"
             }
             h2 class="text-2xl text-yellow dark:text-yellow-dark py-2" {
                 "quick links"
@@ -54,7 +47,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
             }
             p class="font-mono" {
                 "<~~ "
-                a class="link" href="https://wyroam.vercel.app" { "notes" }
+                a class="link" href="https://wyroam.vercel.app/" { "notes" }
                 " ~~>"
             }
             p class="font-mono" {

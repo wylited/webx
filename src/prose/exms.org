@@ -1,10 +1,8 @@
 :PROPERTIES:
 :ID:       exms
 :END:
-#+title: exms
+#+title: exam stress
 #+filetags: :ramification:exams:ramblings:
-
-exms -> exam stress
 
 communal degredation through exam stress
 

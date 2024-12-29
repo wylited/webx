@@ -42,6 +42,7 @@
     transition: max-height 0.5s ease-out;
     overflow: hidden;
     will-change: max-height;
+    @apply pb-2;
   }
   
   fieldset#content.transitioning {
@@ -60,6 +61,28 @@
     width: 30%; /* Change this to adjust the percentage */
     height: 2px; /* Thickness of the underline */
     background: black; /* Color of the underline */
+  }
+  .text-switch {
+    /* position: relative; */
+    /* display: inline-block; */
+    cursor: pointer;
+  }
+
+  .text-switch .text-original,
+  .text-switch .text-hover {
+    transition: opacity 0.3s ease;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+  }
+  .text-switch .text-hover {
+    opacity: 0;
+  }
+  .text-switch:hover .text-original {
+    opacity: 0;
+  }
+  .text-switch:hover .text-hover {
+    opacity: 1;
   }
 }
 

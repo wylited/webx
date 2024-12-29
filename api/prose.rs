@@ -20,7 +20,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
         Ok(json_content) => {
             match serde_json::from_str::<Vec<Prose>>(&json_content) {
                 Ok(prose_list) => maud! {
-                    fieldset #content class="border-y border-black dark:border-white-dark text-center py-4 max-w-prose" {
+                    fieldset #content class="border-y border-black dark:border-white-dark text-center max-w-prose" {
                         legend class="mx-3 px-2" {
                             h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                                 "<$> "
@@ -42,7 +42,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                                 div class="w-16 my-4 border-t border-blue/25 dark:border-blue-dark/25" {}
                                 div class="w-full max-w-full text-left ml-4" {
                                     a class="link text-2xl mb-1 hover:underline hover:decoration-[0.5px]" href=(format!("/prose/{}#content", prose.id)) target="htmz" { (prose.title.clone()) }
-                                    span class="text-sm text-gray dark:text-gray-dark font-mono mb-1" { " " (prose.filename.clone())}
+                                    span class="text-sm text-gray dark:text-gray-dark font-mono m-1 p-0.5 outline rounded-sm outline-1 outline-gray/25 dark:outline-gray-dark/25" {(prose.filename.clone())}
                                     div class="flex flex-wrap gap-1 p-1" {
                                         @for tag in &prose.tags {
                                             span class="px-1 py-0.5 bg-gray/25 dark:bg-gray-dark/25 text-sm" {
@@ -56,9 +56,9 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                     }
                 }.render().into_inner(),
                 Err(e) => maud! {
-                    fieldset #content class="border-y border-black dark:border-white-dark text-center py-4" {
+                    fieldset #content class="border-y border-black dark:border-white-dark text-center" {
                         legend class="mx-3 px-2" {
-                            h2 class="text-left text-purple font-mono dark:text-purple-dark" {
+                            h2 class="text-left text-purple font-mono dark:text-purple-dark"{
                                 "<$> "
                                     @for segment in &paths {
                                         a
@@ -79,7 +79,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
             }
         },
         Err(e) => maud! {
-            fieldset #content class="border-y border-black dark:border-white-dark text-center py-4" {
+            fieldset #content class="border-y border-black dark:border-white-dark text-center" {
                 legend class="mx-3 px-2" {
                     h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                         "<$> "

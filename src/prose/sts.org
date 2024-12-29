@@ -1,10 +1,8 @@
 :PROPERTIES:
-:ID:       sts
+:ID:       Stats
 :END:
-#+title: sts
+#+title: stats
 #+filetags: :ramblings:stats:
-
-sts -> stats
 
 I like to think that I am a data-driven person. I feed information into my brain and it pumps out models, probabilities, choices and paths for me. But the algorithms that my brain probably uses are far to complex for me to gauge or even understand from a higher level perspective
 

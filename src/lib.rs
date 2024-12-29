@@ -29,7 +29,7 @@ impl<T: GlobalAttributes> ExtraAttributes for T {}
 
 pub fn header(current_song: &str) -> String {
     maud! {
-        div class="flex justify-between items-center mb-1" {
+        div class="flex justify-between items-center" {
             div class="content-center" {
                 // h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                 //     "<$> "

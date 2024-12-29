@@ -27,7 +27,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                 Ok(prose_list) => {
                     if let Some(prose) = prose_list.iter().find(|p| p.id == *id) {
                         maud! {
-                            fieldset #content class="border-y border-black dark:border-white-dark text-center py-4 max-w-prose" {
+                            fieldset #content class="border-y border-black dark:border-white-dark text-center max-w-prose" {
                                 legend class="mx-3 px-2" {
                                     h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                                         "<$> "
@@ -62,7 +62,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                         }.render().into_inner()
                     } else {
                         maud! {
-                            fieldset #content class="border-y border-black dark:border-white-dark text-center py-4" {
+                            fieldset #content class="border-y border-black dark:border-white-dark text-center" {
                                 legend class="mx-3 px-2" {
                                     h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                                         "<$> "
@@ -83,7 +83,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
                     }
                 },
                 Err(e) => maud! {
-                    fieldset #content class="border-y border-black dark:border-white-dark text-center py-4" {
+                    fieldset #content class="border-y border-black dark:border-white-dark text-center" {
                         legend class="mx-3 px-2" {
                             h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                                 "<$> "
@@ -104,7 +104,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
             }
         },
         Err(e) => maud! {
-            fieldset #content class="border-y border-black dark:border-white-dark text-center py-4" {
+            fieldset #content class="border-y border-black dark:border-white-dark text-center" {
                 legend class="mx-3 px-2" {
                     h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                         "<$> "

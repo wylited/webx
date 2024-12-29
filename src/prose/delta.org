@@ -1,4 +1,0 @@
-:PROPERTIES:
-:ID:       delta
-:END:
-#+title: Delta

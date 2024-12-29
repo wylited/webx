@@ -10,7 +10,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     let paths = vec!["home".to_string()];
 
     let content = maud! {
-        fieldset #content class="border-y border-black dark:border-white-dark text-center py-4" {
+        fieldset #content class="border-y border-black dark:border-white-dark text-center" {
             legend class="mx-3 px-2" {
                 h2 class="text-left text-purple font-mono dark:text-purple-dark" {
                     "<$> "

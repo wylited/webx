@@ -1,10 +1,8 @@
 :PROPERTIES:
-:ID:       szns
+:ID:       seasons
 :END:
-#+title: szns
+#+title: seasons
 #+filetags: :poem:seasons:
-
-szns -> seasons
 
 - When seasons change, I feel dead \\
 
