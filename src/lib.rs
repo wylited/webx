@@ -74,7 +74,10 @@ pub fn footer() -> String {
                 }
             }
             div class="text-center font-mono" {
-                button #themeBtn class="link text-xl" onclick="toggleTheme()" {"☀"}
+                details {
+                    summary { "toggle" }
+                }
+                // button #themeBtn class="link text-xl" onclick="toggleTheme()" {"☀"}
                 span #time class="pl-3" {
                     " "
                 }
@@ -190,11 +193,10 @@ pub fn base(content: &str) -> String {
                 link
                     href="/dist/style.css"
                     rel="stylesheet";
-                // script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js" {}
                 script src="/scripts.js" {}
             }
             body class="bg-white dark:bg-black-dark p-10 max-w-full max-h-screen transition-colors duration-300 ease-in-out" {
-                iframe hidden name="htmz" onload="handleHtmzTransition(this)" {}
+                iframe hidden name="htmz" onload="setTimeout(()=>document.querySelector(contentWindow.location.hash||null)?.replaceWith(...contentDocument.body.childNodes))" {}
                 div class="flex flex-col items-center justify-center min-h-screen w-full max-w-full"{
                     div class="max-w-full w-full md:w-3/4 lg:w-1/2" {
                         (Raw(content))
@@ -205,6 +207,19 @@ pub fn base(content: &str) -> String {
     }
     .render()
     .into_inner()
+}
+
+pub fn project_card(
+    title: String,
+    description: String,
+    repo: String,
+    demo: String,
+    tags: Vec<String>,
+) -> String {
+    maud! {
+        div class="flex flex-col border border-gray dark:border-gray-dark rounded-lg p-4 shadow-md" {
+        }
+    }.render().into_inner()
 }
 
 impl Prose {

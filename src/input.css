@@ -38,15 +38,23 @@
     @apply text-orange dark:text-orange-dark;
   }
 
-  fieldset#content {
-    transition: max-height 0.5s ease-out;
+  fieldset {
+    transition: all 1s ease-out;
+    transform-origin: center;
     overflow: hidden;
-    will-change: max-height;
-    @apply pb-2;
+    margin: 0 auto;
   }
-  
-  fieldset#content.transitioning {
-    transition: max-height 0.5s ease-in;
+
+  fieldset.htmz-exit {
+    max-height: 0;
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  fieldset.htmz-enter {
+    max-height: fit-content;
+    opacity: 1;
+    transform: scale(1);
   }
 
   .underline-30 {

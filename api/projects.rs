@@ -27,6 +27,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
                 }
             }
             p class="text-3xl" { "Projects I've developed" }
+            hr class="border-2 border-black dark:border-white-dark" {}
             p { "#coming soon after proses, in the meantime just look at github pinned repositories!" }
         }
     }

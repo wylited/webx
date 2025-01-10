@@ -47,7 +47,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
                 }
             }
             p class="mb-1 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-[49%] after:h-[4px] after:bg-orange dark:after:bg-orange-dark" {
-                "Now Reading: Freakonomics, 49%"
+                "Now Reading: Writing to learn, 7%"
             }
             p class="font-mono" {
                 "<~~ "
