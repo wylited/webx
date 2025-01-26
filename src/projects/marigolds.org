@@ -1,13 +1,13 @@
 :PROPERTIES:
 :ID:     Personal Website
-:REPO: https://github.com/wylited/webx
-:DEMO: https://wylited.vercel.app
+:REPOLINK: https://github.com/wylited/webx
+:DEMOLINK: https://wylited.vercel.app
 :END:
-#+title: marigolds
-#+filetags: :poem:favs:
+#+title: This Website
+#+filetags: :web:design:
 
-The best part is that we didn't fall in love. We grew into it like a pair of marigolds blossoming next to each other, clipped into our little bouquet. I reached toward sunlight while you curved toward shade, yet somehow our petals still brushed in the afternoon breeze. I watched you bloom brighter each season, your colors deepening with mine.
+My personal web presence - A highly opinonated, minimalistic, and blazingly fast personal website with a custom content delivery backend. The entire framework being written from scratch.
 
-Strange how gardens grow – some flowers reach impossible heights while others spread quiet and low across the earth. Learn to appreciate both our patterns, even when the arrangement seemed odd to passing glances. Time tended to us in its own way, through drought and rain, through careful pruning and wild overgrowth.
+I used as little javascript as possible, and wrote as much as possible in Rust to test my skills. It makes use of [[https://leanrada.com/htmz/][HTMZ]] to load HTML directly into the DOM.
 
-And so when the flowers are placed in different vases, we won't wither and die but continue to bloom and prosper. Different soils may cradle us now, different winds may bend our stems, but that's the thing about flowers that grow true – they remember how to flourish, even when the garden changes.
+It has a unique project structure, where each "API" binary maps to an endpoint, through vercels [[https://github.com/vercel-community/rust][rust runtime]].

@@ -12,8 +12,19 @@
   h2 {
     @apply text-black dark:text-white;
   }
+  h3 {
+    @apply text-black dark:text-white;
+  }
   span {
     @apply text-black dark:text-white;
+  }
+  a {
+    @apply text-blue dark:text-blue-dark; /* Base styles for all buttons */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+
+  a:hover {
+    @apply text-red dark:text-red-dark; /* Change text color on hover */
   }
 
 }
@@ -27,7 +38,6 @@
   .link:hover {
     @apply text-red dark:text-red-dark; /* Change text color on hover */
   }
-
 
   .nav {
     @apply text-green dark:text-green-dark underline;
@@ -45,16 +55,15 @@
     margin: 0 auto;
   }
 
-  fieldset.htmz-exit {
-    max-height: 0;
-    opacity: 0;
-    transform: scale(0.95);
+  fieldset#content {
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+    will-change: max-height;
+    @apply pb-2;
   }
 
-  fieldset.htmz-enter {
-    max-height: fit-content;
-    opacity: 1;
-    transform: scale(1);
+  fieldset#content.transitioning {
+    transition: max-height 0.5s ease-in;
   }
 
   .underline-30 {

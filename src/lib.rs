@@ -5,7 +5,11 @@ use fuzzy_matcher::FuzzyMatcher;
 use hypertext::{html_elements, maud, Attribute, GlobalAttributes, Raw, Renderable};
 use orgize::Org;
 use serde::{Deserialize, Serialize};
-use std::{collections::HashSet, fs, path::PathBuf};
+use std::{
+    collections::{HashMap, HashSet},
+    fs,
+    path::PathBuf,
+};
 
 pub fn fetch(url: &str) -> anyhow::Result<String> {
     let url = if url.contains("localhost") && url.starts_with("https://") {
@@ -173,7 +177,7 @@ pub struct Prose {
     pub html: String,
 }
 
-pub fn parse_file(path: &PathBuf) -> Result<Prose> {
+pub fn parse_prose(path: &PathBuf) -> Result<Prose> {
     let org = fs::read_to_string(path)?; // Read the file to a string
 
     // Extract the filename from the path
@@ -234,6 +238,58 @@ pub fn parse_file(path: &PathBuf) -> Result<Prose> {
     })
 }
 
+pub fn parse_project(path: &PathBuf) -> Result<Project> {
+    let org = fs::read_to_string(path)?; // Read the file to a string
+
+    // Parse the org file
+    let content = Org::parse(&org);
+
+    // Extract the properties from the org file using orgize
+    let properties = content
+        .document()
+        .properties()
+        .ok_or_else(|| anyhow::anyhow!("No properties found"))?
+        .to_hash_map();
+
+    // Extract the ID from the properties
+    let id = properties
+        .get("ID")
+        .ok_or_else(|| anyhow::anyhow!("No ID property found"))?
+        .to_string();
+
+    let links: HashMap<String, String> = properties
+        .iter()
+        .filter(|(key, _)| key.ends_with("LINK"))
+        .map(|(key, value)| {
+            let link = key.replace("LINK", "").to_lowercase();
+            (link, value.to_string())
+        })
+        .collect();
+
+    // Extract the tags from the properties
+    let tags: HashSet<String> = content
+        .document()
+        .keywords()
+        .find(|keyword| keyword.key() == "filetags")
+        .map(|keyword| {
+            keyword
+                .value()
+                .split(':')
+                .map(String::from)
+                .filter(|tag| !tag.trim().is_empty()) // Filter out empty strings and those with only spaces
+                .collect()
+        })
+        .unwrap_or_else(HashSet::new);
+
+    Ok(Project {
+        id,
+        title: content.title().unwrap_or_else(|| "Untitled".to_string()),
+        description: content.to_html(),
+        tags: tags.into_iter().collect(),
+        links,
+    })
+}
+
 pub fn base(content: &str) -> String {
     maud! {
         !DOCTYPE
@@ -263,7 +319,7 @@ pub fn base(content: &str) -> String {
                 script src="/scripts.js" {}
             }
             body class="bg-white dark:bg-black-dark p-10 max-w-full max-h-screen transition-colors duration-300 ease-in-out" {
-                iframe hidden name="htmz" onload="setTimeout(()=>document.querySelector(contentWindow.location.hash||null)?.replaceWith(...contentDocument.body.childNodes))" {}
+                iframe hidden name="htmz" onload="handleHtmzTransition(this)" {}
                 div class="flex flex-col items-center justify-center min-h-screen w-full max-w-full"{
                     div class="max-w-full w-full md:w-3/4 lg:w-1/2" {
                         (Raw(content))
@@ -274,19 +330,6 @@ pub fn base(content: &str) -> String {
     }
     .render()
     .into_inner()
-}
-
-pub fn project_card(
-    title: String,
-    description: String,
-    repo: String,
-    demo: String,
-    tags: Vec<String>,
-) -> String {
-    maud! {
-        div class="flex flex-col border border-gray dark:border-gray-dark rounded-lg p-4 shadow-md" {
-        }
-    }.render().into_inner()
 }
 
 impl Prose {
@@ -319,4 +362,13 @@ impl Prose {
         matches.sort_by(|a, b| b.0.cmp(&a.0));
         matches.into_iter().map(|(_, prose)| prose).collect()
     }
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct Project {
+    pub id: String,
+    pub title: String,
+    pub description: String,
+    pub tags: Vec<String>,
+    pub links: HashMap<String, String>,
 }
