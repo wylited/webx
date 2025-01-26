@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       conformance
+:END:
+#+title: conformance
+#+filetags: :essay:psychology:
+
+#+begin_quote
+       You are defined by how you do the little things.
+#+end_quote
+
+My mind conforms the thoughts I have to the physical space around me. It's likely something you have experienced too. Your messy desk and messy room not allowing you to focus on the task at hand, distracting you. The chaotic factors in the environment around you seep into and prevent necessary contemplations. I just can't stand it, I have to clean my desk in order for me to complete my math homework.
+
+This conforming nature of our brain is powerful, one can observe it in the form of mental resets. When I am stuck at a math problem or a bug in my code that I just can't find, I force myself to leave my desk and go for a short walk. This change in environment triggers a mental reset, allowing us to think /differently/, which is *key*. Thinking in the same way constantly will not provide a new solution.
+
+So, we must focus on our environment, and be aware of its influence on our thinking. This concept applies to many situations, like when your phone is just within hands reach, and so your mind will wander to it and waste countless hours for instant gratification, in contrast to when your phone is out of sight, and thus *out of mind*.
+
+Even older philosophies, such as /Feng Shui/ that originated in Ancient China, postulates that it is key that we harmonize with our surrounding environment for health and wealth. Although the art is claimed to be pseudoscientific, an orderly room will defintely help you remain calm in ways the disorderly room acts detrimental to you and the Chinese discovered this from an early stage.
+
+Finally, drawing back to the original quote, /you are defined by how you do little things./ What is really meant by this, is that taking the effort into cleaning your room and keeping it orderly allows you to grow as a more discplined person. One cannot suddenly become disciplined and avoid youtube shorts while still having a messy desk and bedroom. Starting small defines your character and your capability to achieve, self improvement is the same as with any other academic pursuit.
+
+In conclusion, we must remain mindful of our environment as well as our actions and understand the influences they might have on our thoughts and wellbeing.
