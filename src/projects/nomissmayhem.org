@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:     nomissmayhem
+:REPOLINK: https://github.com/13carpileup/nomissmayhem
+:DEMOLINK: https://nomissmayhem.vercel.app/
+:END:
+#+title: No Miss Mayhem
+#+filetags: :game:javascript:UIUX:
+
+A fast paced, bullet hell, dungeon crawler game where /you are your own enemy/.
+
+Created for [[https://counterspell.hackclub.com/][Counterspell HK]], in 8 hours, ranked 2nd regionally. [[https://airtable.com/appdpwk5T93TsDg4R/shrW4k6FcQPU5DtaK][Top 10]] globally, after continual development for a week.
+
+The game engine is custom made in Javascript from scratch, alongside locally grown art and music.

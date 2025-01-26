@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:     wyroam
+:REPOLINK: https://github.com/wylited/notes
+:DEMOLINK: https://wyroam.vercel.app/
+:VIDEOLINK: https://youtu.be/PF3C9Q9SQd8
+:END:
+#+title: Wyroam
+#+filetags: :notes:Org:Rust:Nextjs:React:GraphQL:UIUX:
+
+Wyroam is a custom interface for viewing [[https://en.wikipedia.org/wiki/Zettelkasten][zettelkasten]] or /[[https://roamresearch.com][roam]]/ style interconnected notes. It uses the [[https://www.orgroam.com][org roam]] note format.
+
+The backend that parses the notes is written in Rust, and can parse hundereds of notes in mere milliseconds into a GraphQL database.
+
+The frontend, written in NextJS, renders a split note viewing setup, a vertical tab list with keyboard caretting controls, and a graph rendering view as well as a fuzzy note searching menu.
+
+There are also several other features, like LaTeX rendering, file linking and open on click within the graph.
+
+This project was developed for a Computer Science project, and thus the release of the source code will be delayed.

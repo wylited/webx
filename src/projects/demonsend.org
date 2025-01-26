@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:     demonsend
+:REPOLINK: https://github.com/wylited/demonsend
+:VIDEOLINK: https://www.youtube.com/watch?v=c69C9M5C85o
+:CRATELINK: https://crates.io/crates/demonsend
+:END:
+#+title: Demonsend
+#+filetags: :Rust:Unix:daemon:UDP:multicast:
+
+Demonsend is a unix daemon client for the Localsend [[https://github.com/localsend/protocol][protocol]]. [[https://localsend.org][Localsend]] lacked a command line interface, which demonsend implements.
+Alongside it, an [[github.com/wylited/localsend/][implementation]] of the protocol in Rust as a library was written.
+
+The unix daemon is interfaceable through the binary client, or through IPC on the socket at ~/tmp/demonsend.sock~.

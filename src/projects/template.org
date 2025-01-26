@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:     template
+:REPOLINK: https://github.com/wylited/
+:DEMOLINK:
+:END:
+#+title:
+#+filetags:

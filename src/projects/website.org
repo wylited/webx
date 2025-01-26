@@ -4,10 +4,10 @@
 :DEMOLINK: https://wylited.vercel.app
 :END:
 #+title: This Website
-#+filetags: :web:design:
+#+filetags: :web:design:rust:frontend:UI:
 
 My personal web presence - A highly opinonated, minimalistic, and blazingly fast personal website with a custom content delivery backend. The entire framework being written from scratch.
 
-I used as little javascript as possible, and wrote as much as possible in Rust to test my skills. It makes use of [[https://leanrada.com/htmz/][HTMZ]] to load HTML directly into the DOM.
+I used as little Javascript as possible, and wrote as much as possible in Rust to test my skills. It makes use of [[https://leanrada.com/htmz/][HTMZ]] to load HTML directly into the DOM.
 
 It has a unique project structure, where each "API" binary maps to an endpoint, through vercels [[https://github.com/vercel-community/rust][rust runtime]].

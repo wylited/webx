@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:     cyou
+:REPOLINK: http://github.com/Ethancatepete/CYOU
+:DEMOLINK: https://github.com/Ethancatepete/CYOU/blob/main/Cellular%20Automata.pdf
+:END:
+#+title: CYOU
+#+filetags: :Rust:automata:web:wasm:UIUX:
+
+✨ Code Your Own Universe ✨
+
+A scriptable cellular automata web simulator made with the Yew framework and scriptable through Rhai.script.
+
+This software was developed as an interactive playground for the accompanying hackathon lecture on Cellular Automata: a crash course into discrete computational modelling at ESF CoCo 2023.

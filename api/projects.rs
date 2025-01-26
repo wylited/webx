@@ -53,7 +53,7 @@ fn render_projects_view(paths: &[String], projects: Vec<Project>) -> String {
                     }
                 }
             }
-            p class="text-3xl py-2" { "Projects I've developed" }
+            p class="text-3xl py-2" { "My Favorite Projects" }
             div class="projects-container m-4 rounded" {
                 @for project in projects.iter() {
                     div class="project-card border border-gray dark:border-gray-dark rounded p-4 mb-4 text-left" {
@@ -83,6 +83,11 @@ fn render_projects_view(paths: &[String], projects: Vec<Project>) -> String {
                     }
                 }
             }
+            p class="text-xl mt-4" { "Checkout my "
+                                       a href="https://github.com/wylited" {
+                                           "GitHub"
+                                       }
+                                       " for more projects!" }
         }
     }.render().into_inner()
 }
@@ -106,7 +111,10 @@ fn render_error_view(paths: &[String], title: &str, error_message: &str) -> Stri
                 }
             }
             p class="text-3xl" { (title) }
-            p class="text-2xl mb-8" { "An error occurred while fetching data." }
+            p class="text-2xl mb-8" { "An error occurred while fetching data. Checkout my github instead?" }
+            a href="https://github.com/wylited" {
+                "GitHub"
+            }
             p class="text-red-600" { (error_message) }
         }
     }.render().into_inner()
