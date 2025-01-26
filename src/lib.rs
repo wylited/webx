@@ -77,7 +77,7 @@ pub fn footer() -> String {
                 details {
                     summary { "toggle" }
                 }
-                // button #themeBtn class="link text-xl" onclick="toggleTheme()" {"☀"}
+                button #themeBtn class="link text-xl" onclick="toggleTheme()" {"☀"}
                 span #time class="pl-3" {
                     " "
                 }
