@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       Writing
+:END:
+#+title: Writing
+#+filetags: :psychology:revolutions:
+
+The pragmatic agenda, propelled by the industrial revolution, is one that pushes people to be more efficient, logical, and realistic. In the article, the advent of typing is seen as instant and often effortless. As someone who averages speeds greater than 140 words per minute while typing, I could not agree less. Memorization of the keyboard layout allows for typing to be completely elementary, where I don't even need to rely on a response and can still ensure mostly correct and accurate communication of my thoughts into physical outputs. On the other handwriting is seen slow and decisive, each hand stroke leads towards inevitable fatigue and failure and thus each character scrawled has greater valued than a key pressed "the slower pace of writing forces us to summarise as we write, as opposed to the greater speed of transcribing on a keyboard." The article argues that typing, unlike handwriting, does not stimulate the human mind as much as writing, but right now, am I not typing this out?
+
+I think I asked myself a question that broke the flow of my thinking since I can't answer it.
+
+It is not that typing completely prevents people from learning and knowing, it just makes it easier for people to avoid it as much as possible. Typing several essays, internal assessments and even the extended essay in my school curriculum has not prevented me from deeply thinking about what I am writing.
+Beyond the cultural shift towards efficiency, the article surmises that digital reliance is a reason that the populations handwriting skill atrophies greatly. However, "physicians still spend a lot of their time writing notes on charts or writing prescriptions by hand," yet many physicians write ineligibly to the point of grave error. Is technology the point of fault here? Or is there another acting force.
+
+Finally, despite heavily emphasizing on the artistic value of handwriting through calligraphy and cursive, the article ignores the ubiquitous and crucial presence of typography. In the modern day and age, digital design, typography, and user experience can make and break an individual or their company. Take the [[https://youtu.be/E1nSwpxRuJo][business card scene from American Psycho]], where Bateman feels an intense emotional reaction when he realizes his card is inferior compared to Paul Allen. The simple print on his card embeds his reputation and ergo his ego. Digital aesthetic now speaks volumes on competence and character that once was the role of handwritten content.
+
+Although I could go on about new forms of art that have developed through typing such as the art of coding, the true challenge lies not in choosing between handwriting and typing but learning to harness the strengths of both in a way that enriches our communication and preserves the artistry of our word.
