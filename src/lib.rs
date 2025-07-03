@@ -101,8 +101,8 @@ pub fn home(paths: Vec<String>) -> String {
                     "Math AA HL, Physics HL, Comp Sci HL, Econ HL"
                 }
             }
-            p class="mb-2 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-[49%] after:h-[4px] after:bg-orange dark:after:bg-orange-dark" {
-                "Now Reading: Writing to Learn, 49%"
+            p class="mb-2 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-[21%] after:h-[4px] after:bg-orange dark:after:bg-orange-dark" {
+                "Now Reading: Atlas Shrugged, 21%"
             }
             p class="font-mono" {
                 "<~~ "
