@@ -1,6 +1,8 @@
+
+
 # [My personal web presence](https://wylited.vercel.app)
 
-A highly opinonated, minimalistic, and blazingly fast personal website with a content backend written almost completely in Rust.
+A highly opinionated, minimalistic, and blazingly fast personal website with a content backend written almost completely in Rust.
 
 ## Built With
 - [htmx](https://htmx.org) AJAX but better
@@ -51,4 +53,3 @@ vercel dev
 ``` shell
 vercel build && vercel deploy --prebuilt 
 ```
-
